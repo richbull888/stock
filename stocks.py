@@ -62,7 +62,7 @@ def kLine_30d(code, securityName):
     plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
 
     ax.set_facecolor("white")
-    ax.set_title(securityName)
+    ax.set_title(f'{securityName}({code})')
 
     # 画均线
     plt.plot(df2['5'].values, alpha=0.5, label='MA5')
