@@ -8,6 +8,9 @@ import mplfinance.original_flavor as mpf
 
 pd.set_option('display.max_rows', None)
 
+now = datetime.datetime.now()
+print("Current time is:", now)
+
 # 沪A实时行情数据
 df_all = ak.stock_sh_a_spot_em()
 
@@ -29,7 +32,6 @@ print(df_final)
 
 # K line -30 days
 def kLine_30d(code, securityName):
-    now = datetime.datetime.now()
     yyyymmdd = '%04d%02d%02d'%(now.year,now.month,now.day)
     last_month = datetime.datetime.today()-datetime.timedelta(days=30)
     l_yyyymmdd = '%04d%02d%02d'%(last_month.year,last_month.month,last_month.day)
