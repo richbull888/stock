@@ -7,6 +7,7 @@ import matplotlib as mpl
 import mplfinance.original_flavor as mpf
 
 pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 
 now = datetime.datetime.now()
 print("Current time is:", now)
@@ -14,8 +15,8 @@ print("Current time is:", now)
 # 沪A实时行情数据
 df_all = ak.stock_sh_a_spot_em()
 
-# 涨幅 3-5%
-df_zf = df_all.loc[(df_all['涨跌幅'] >= 3) & (df_all['涨跌幅'] <= 5)]
+# 涨幅 3-6%
+df_zf = df_all.loc[(df_all['涨跌幅'] >= 3) & (df_all['涨跌幅'] <= 6)]
 
 # 量比大于1.2
 df_lb = df_zf.loc[(df_zf['量比'] > 1.2)]
