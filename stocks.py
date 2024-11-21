@@ -72,7 +72,7 @@ def kLine_30d(code, securityName):
     plt.plot(df2['10'].values, alpha=0.5, label='MA10')
     plt.plot(df2['20'].values, alpha=0.5, label='MA20')
 
-    ax.legend(facecolor='white', edgecolor='white', fontsize=6)
+    ax.legend(facecolor='white', edgecolor='white', fontsize=6, loc=2)
     # date 为 object 数据类型，通过 pd.to_datetime将该列数据转换为时间类型，即datetime
     df2["日期"] = pd.to_datetime(df2["日期"], format='%Y-%m-%d')
     # 修改x轴坐标
