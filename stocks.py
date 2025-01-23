@@ -15,17 +15,17 @@ print("Current time is:", now)
 # 沪A实时行情数据
 df_all = ak.stock_sh_a_spot_em()
 
-# 涨幅 3-6%
-df_zf = df_all.loc[(df_all['涨跌幅'] >= 3) & (df_all['涨跌幅'] <= 6)]
+# 涨幅 2-4%
+df_zf = df_all.loc[(df_all['涨跌幅'] >= 2) & (df_all['涨跌幅'] <= 4)]
 
 # 量比大于1.2
 df_lb = df_zf.loc[(df_zf['量比'] > 1.2)]
 
-# 换手率 5-10%
-df_hsl = df_lb.loc[(df_lb['换手率'] >= 5) & (df_lb['换手率'] <= 10)]
+# 换手率 3-10%
+df_hsl = df_lb.loc[(df_lb['换手率'] >= 3) & (df_lb['换手率'] <= 10)]
 
-# 流通市值 50-200亿
-df_ltsz = df_hsl.loc[(df_hsl['流通市值'] >= 50e+08) & (df_hsl['流通市值'] <= 200e+08)]
+# 流通市值 80-600亿
+df_ltsz = df_hsl.loc[(df_hsl['流通市值'] >= 80e+08) & (df_hsl['流通市值'] <= 600e+08)]
 
 # 按成交量排序
 df_final = df_ltsz.sort_values(by='成交量', ascending=False)
